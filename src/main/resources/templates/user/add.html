@@ -9,6 +9,7 @@
 </head>
 <body>
 <form method="post" action="/user">
+    <div th:text="${error}"></div>
     <div class="form-group">
         <label> Username
             <input type="text" name="username" class="form-control">
@@ -20,7 +21,7 @@
             <input type="password" name="password" class="form-control">
         </label>
         <label> Re-type Password
-            <input type="password" name="password" class="form-control">
+            <input type="password" name="verify" class="form-control">
         </label>
     </div>
     <div class="form-group">
