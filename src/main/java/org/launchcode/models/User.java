@@ -19,8 +19,13 @@ public class User {
 
     @NotNull(message = "Passwords must match.")
     private String verifyPassword;
-    public User() {
 
+    private int id;
+    private static int nextId = 1;
+
+    public User() {
+        this.id = nextId;
+        nextId++;
     }
 
     public User(String username, String email, String password, String verifyPassword) {
@@ -32,13 +37,14 @@ public class User {
     }
 
     private void checkPassword(){
-        if (password != null || verifyPassword != null) {
-            if (!(password.equals(verifyPassword))) {
-                verifyPassword = null;
-            }
+        if (password != null && verifyPassword != null && !(password.equals(verifyPassword))) {
+            verifyPassword = null;
         }
     }
 
+    public int getId() {
+        return id;
+    }
 
     public String getUsername() {
         return username;

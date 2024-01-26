@@ -19,7 +19,6 @@ public class UserController {
 
     @PostMapping
     public String processAddUserForm(Model model, @Valid User user, Errors errors) {
-
         if (errors.hasErrors()){
             return "user/add";
         }
